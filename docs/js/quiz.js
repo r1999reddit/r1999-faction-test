@@ -4,7 +4,7 @@ const scores = Object.fromEntries(factions.map(f => [f, 0]));
 const factionData = {
   Foundation: {
     title: "St. Pavlov Foundation",
-    image: "foundation.png",
+    image: "pavlov.png",
     description: "\"The Storm — a chaos that cannot be bargained with. Therefore, you do not bargain but regulate. In the silence of order, humanity survives.\""
   },
   Manus: {
@@ -53,7 +53,7 @@ const questions = [{
         }
       },
       {
-        t: "Prepare contingencies",
+        t: "Prepare for contingencies",
         p: {
           Foundation: 3,
           Laplace: 1
@@ -76,7 +76,7 @@ const questions = [{
         }
       },
       {
-        t: "Observe them",
+        t: "Interview them",
         p: {
           Laplace: 3,
           Zeno: 2
@@ -167,7 +167,7 @@ const questions = [{
         }
       },
       {
-        t: "All objectives achieved with heavy losses",
+        t: "All objectives achieved without any losses",
         p: {
           Manus: 3
         }

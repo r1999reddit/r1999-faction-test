@@ -21,7 +21,7 @@ body {
   padding: 2.5rem;
   background: var(--sepia);
   border: 1px solid var(--border);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 h1 {
@@ -60,7 +60,7 @@ h1 {
 .option {
   padding: 0.9rem 1.2rem;
   border: 1px solid var(--border);
-  background: rgba(255,255,255,0.35);
+  background: rgba(255, 255, 255, 0.35);
   cursor: pointer;
 }
 
@@ -111,9 +111,46 @@ button:hover {
   margin-top: 2rem;
 }
 
-/* =========================
-   Mobile Adjustments
-   ========================= */
+.result-image {
+  display: block;
+  margin: 2rem auto;
+  max-width: 420px;
+  width: 100%;
+}
+
+.result {
+  padding-top: 1rem;
+}
+
+.giveaway {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.giveaway button {
+  font-size: 1.05rem;
+  padding: 0.7rem 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.giveaway-form {
+  width: 100%;
+}
+
+.giveaway-form iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 520px;
+  border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* mobile stuff */
 @media (max-width: 768px) {
 
   body {
@@ -174,5 +211,17 @@ button:hover {
 @media (max-width: 480px) {
   .quiz-container {
     padding: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .result-image {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .giveaway-form iframe {
+    height: 600px;
   }
 }

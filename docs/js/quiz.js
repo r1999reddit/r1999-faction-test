@@ -30,6 +30,7 @@ const factionData = {
 };
 
 const questions = [{
+    // question 1
     q: "The Storm is approaching. What is your first course of action?",
     a: [{
         t: "Get angry",
@@ -49,7 +50,7 @@ const questions = [{
         t: "Focus on surviving",
         p: {
           Zeno: 3,
-          Foundation: 1
+          Foundation: 2
         }
       },
       {
@@ -62,6 +63,7 @@ const questions = [{
     ]
   },
   {
+    // question 2
     q: "Someone denies the Storm exists. What do you do?",
     a: [{
         t: "Lash out",
@@ -72,7 +74,9 @@ const questions = [{
       {
         t: "Feel sadness",
         p: {
-          UTTU: 3
+          UTTU: 3,
+          Foundation: 2,
+          Zeno: 1,
         }
       },
       {
@@ -91,6 +95,7 @@ const questions = [{
     ]
   },
   {
+    // question 3
     q: "How do you feel about the future not being able to be changed?",
     a: [{
         t: "Keep fighting it",
@@ -109,7 +114,8 @@ const questions = [{
         t: "Try to understand why",
         p: {
           Laplace: 3,
-          Foundation: 1
+          Foundation: 1,
+          UTTU: 2,
         }
       },
       {
@@ -121,6 +127,7 @@ const questions = [{
     ]
   },
   {
+    // question 4
     q: "You have been given a mission, and need to form a team. What do you do?",
     a: [{
         t: "Randomly choose whoever is available",
@@ -153,6 +160,7 @@ const questions = [{
     ]
   },
   {
+    // question 5
     q: "What defines a successful mission?",
     a: [{
         t: "All objectives achieved, nothing else matters",
@@ -163,7 +171,8 @@ const questions = [{
       {
         t: "Primary objectives achieved with minor losses",
         p: {
-          Foundation: 3
+          Foundation: 3,
+          UTTU: 2,
         }
       },
       {
@@ -182,6 +191,7 @@ const questions = [{
     ]
   },
   {
+    // question 6
     q: "How would you like to celebrate the success of completing the mission?",
     a: [{
         t: "Treat yourself to a lavish meal and good drinks",
@@ -211,6 +221,7 @@ const questions = [{
     ]
   },
   {
+    // question 7
     q: "You have apprehended a high-ranking official leaking sensitive information. What is the appropriate correction?",
     a: [{
         t: "Detention - ensure they can no longer compromise the collective order",
@@ -236,12 +247,14 @@ const questions = [{
       {
         t: "Public execution - betrayal of their own kind is an insult that can only be washed away in the Storm",
         p: {
-          Manus: 3
+          Manus: 3,
+          Zeno: 1,
         }
       }
     ]
   },
   {
+    // question 8
     q: "Your team leader has replaced you halfway through a mission . How do you approach this sudden dismissal?",
     a: [{
         t: "Lash out and go on an explosive tirade - \"This must be agenda-driven\"",
@@ -260,7 +273,7 @@ const questions = [{
         t: "Ignore the leader's orders and march forward with the mission - \"I can't leave my team behind\"",
         p: {
           Zeno: 3,
-          UTTU: 1
+          UTTU: 2,
         }
       },
       {
@@ -273,6 +286,7 @@ const questions = [{
     ]
   },
   {
+    // question 9
     q: "The Foundation issues an order that is strategically sound but morally questionable. How do you proceed?",
     a: [{
         t: "Follow without question",
@@ -293,7 +307,8 @@ const questions = [{
         p: {
           UTTU: 3,
           Foundation: 1,
-          Laplace: 1
+          Laplace: 1,
+          Zeno: 2,
         }
       },
       {
@@ -306,6 +321,7 @@ const questions = [{
     ]
   },
   {
+    // question 10
     q: "What is your definition of a perfect world?",
     a: [{
         t: "A world where every individual has a clear role, society is governed by rational and humane laws of coexistence",
@@ -333,7 +349,8 @@ const questions = [{
         t: "A world where the boundaries between magic and science are gone. Instead, all live as one singular race, free of borders and separation",
         p: {
           Laplace: 3,
-          Foundation: 2
+          Foundation: 2,
+          UTTU: 1,
         }
       }
     ]

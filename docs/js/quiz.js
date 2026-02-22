@@ -363,17 +363,45 @@ const quiz = document.getElementById("quiz");
 let current = 0;
 let hasSelected = false;
 
+const LABELS = ["A", "B", "C", "D"];
+
 questions.forEach((q, i) => {
   const div = document.createElement("div");
   div.className = "question" + (i === 0 ? " active" : "");
   div.innerHTML = `<div class="question-title">${q.q}</div>
     <div class="options">
       ${q.a.map((opt, j) =>
-        `<div class="option" onclick="select(${i},${j},this)">${opt.t}</div>`
+        `<div class="option" onclick="select(${i},${j},this)">
+          <span class="option-label">${LABELS[j]}</span>
+          <span class="option-text">${opt.t}</span>
+        </div>`
       ).join("")}
     </div>`;
   quiz.appendChild(div);
 });
+
+const progressDots = document.getElementById("progressDots");
+questions.forEach((_, i) => {
+  const dot = document.createElement("div");
+  dot.className = "progress-dot" + (i === 0 ? " active" : "");
+  progressDots.appendChild(dot);
+});
+
+function toRoman(n) {
+  return ["I","II","III","IV","V","VI","VII","VIII","IX","X"][n - 1] || String(n);
+}
+
+function updateProgress(i) {
+  document.getElementById("progressLabel").textContent =
+    `Assessment ${toRoman(i + 1)} of ${toRoman(questions.length)}`;
+  document.querySelectorAll(".progress-dot").forEach((dot, idx) => {
+    dot.classList.remove("active", "done");
+    if (idx < i)      dot.classList.add("done");
+    else if (idx === i) dot.classList.add("active");
+  });
+}
+
+updateProgress(0);
 
 function select(qi, ai, el) {
   const questionEl = document.querySelectorAll(".question")[qi];
@@ -384,7 +412,6 @@ function select(qi, ai, el) {
   el.classList.add("selected");
   questions[qi].selected = ai;
 
-  // 🔓 allow moving forward
   hasSelected = true;
   nextBtn.disabled = false;
 }
@@ -398,6 +425,7 @@ function show(i) {
   nextBtn.disabled = !hasSelected;
   nextBtn.textContent =
     i === questions.length - 1 ? "Finish" : "Next";
+  updateProgress(i);
 }
 
 nextBtn.onclick = () => {
@@ -424,6 +452,7 @@ function finish() {
   quiz.style.display = "none";
   document.querySelector(".navigation").style.display = "none";
   document.getElementById("footer").style.display = "none";
+  document.getElementById("progress").style.display = "none";
   const data = factionData[top];
   result.innerHTML = `
     <h2>Affiliation Confirmed</h2>

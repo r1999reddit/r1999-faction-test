@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reverse: 1999 — Faction Affinity Record</title>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div class="quiz-container">
       <h1>Faction Affinity Record</h1>
       <div class="subtitle">Temporal Psychological Assessment</div>
+      <div class="divider"><span class="divider-icon">◆ &thinsp; ◆ &thinsp; ◆</span></div>
+      <div id="progress" class="progress">
+        <span id="progressLabel">Assessment I of X</span>
+        <div class="progress-dots" id="progressDots"></div>
+      </div>
       <div id="quiz"></div>
       <div class="navigation">
         <button id="prevBtn" disabled>Previous</button>
-        <button id="nextBtn">Next</button>
+        <button id="nextBtn" disabled>Next</button>
       </div>
       <div class="result" id="result"></div>
       <div class="footer-note" id="footer">
